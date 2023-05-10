@@ -2,17 +2,20 @@
 
 class NumberRow extends React.Component {
 
+    onNumberSelectClick = () => {
+        this.props.onNumberSelectClick(this.props.number);
+    }
 
-    
+
     render() {
         const { amount } = this.props.number;
-        const { onNumberSelectClick, isSelected } = this.props;
+        const { onNumberSelectClick, isSelected, isLocked } = this.props;
         return (
             <tr>
                 <td>{amount}</td>
                 <td>
-                    <button className={`btn ${isSelected ? 'btn-danger' : 'btn-success'}`} onClick={onNumberSelectClick}>
-                        {isSelected ? 'Unselect' : 'Select'}
+                    <button className={`btn ${isSelected ? 'btn-danger' : 'btn-success'}`} disabled={isLocked} onClick={onNumberSelectClick}>
+                        {isSelected ? 'Remove from selected' : 'Add to selected'} 
                     </button>
                 </td>
             </tr>
