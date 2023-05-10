@@ -11,22 +11,17 @@ class NumberTable extends React.Component {
         numbers: [],
         selectedNumbers: [],
         lockedNumbers: [],
-        number: {
-            id: uuidv4(),
-            amount: Math.floor(Math.random() * 100) + 1
-        }
     }
 
     onAddClick = () => {
         const { numbers } = this.state;
-        const { id, amount } = this.state.number;
-        const copy = [...numbers, { id, amount }]
+        const number = {
+            id: uuidv4(),
+            amount: Math.floor(Math.random() * 100) + 1
+        }
+        const copy = [...numbers, number]
         this.setState({
-            numbers: copy,
-            number: {
-                id: uuidv4(),
-                amount: Math.floor(Math.random() * 100) + 1
-            }
+            numbers: copy
         })
     }
 
@@ -61,7 +56,7 @@ class NumberTable extends React.Component {
         const { selectedNumbers, numbers, lockedNumbers } = this.state;
         return (
             <div className="app-container">
-                <div className="d-flex flex-column justify-content-center align-items-center">
+                <div className="d-flex flex-column  align-items-center">
                     <button onClick={this.onAddClick} className="btn btn-primary mb-3">Add</button>
                     <div className="table-responsive">
                         <table className="table table-hover table-bordered table-striped">
