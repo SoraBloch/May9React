@@ -3,11 +3,6 @@
 
 class SelectedNumberRow extends React.Component {
 
-    onNumberLockClick = () => {
-        this.props.onNumberLockClick(this.props.number);
-    }
-
-
     render() {
         const { amount } = this.props.number;
         const { onNumberLockClick, isLocked } = this.props;

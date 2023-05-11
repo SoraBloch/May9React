@@ -56,7 +56,7 @@ class NumberTable extends React.Component {
         const { selectedNumbers, numbers, lockedNumbers } = this.state;
         return (
             <div className="app-container">
-                <div className="d-flex flex-column  align-items-center">
+                <div className="d-flex flex-column justify-content-center align-items-center">
                     <button onClick={this.onAddClick} className="btn btn-primary mb-3">Add</button>
                     <div className="table-responsive">
                         <table className="table table-hover table-bordered table-striped">

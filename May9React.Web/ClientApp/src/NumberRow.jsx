@@ -2,10 +2,6 @@
 
 class NumberRow extends React.Component {
 
-    onNumberSelectClick = () => {
-        this.props.onNumberSelectClick(this.props.number);
-    }
-
 
     render() {
         const { amount } = this.props.number;
